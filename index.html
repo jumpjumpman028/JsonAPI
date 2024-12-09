@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON 顯示範例</title>
+</head>
+<body>
+    <h1>JSON 資料</h1>
+    <pre id="jsonOutput"></pre>
+
+    <script>
+        // 使用 Fetch API 載入 JSON 檔案
+        fetch('mrliving_beds_wsize.json')
+            .then(response => response.json())
+            .then(data => {
+                // 顯示 JSON 資料
+                document.getElementById('jsonOutput').textContent = JSON.stringify(data, null, 4);
+            })
+            .catch(error => console.error('無法載入 JSON 資料:', error));
+    </script>
+</body>
+</html>
